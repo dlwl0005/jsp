@@ -8,57 +8,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>합 구하기</title>
 </head>
 <body>
 <%
-for(int i = 0; i <5; i++){
+int sum = 0;
+for(int i= 1 ; i<=10; i++){
+	sum = sum + i;
+}
 %>
-<h1>Lorem ipsum dolor.</h1>
+1부터 10까지의 합은<%=sum %> 입니다.
 
+<br>
 <%
+int sum2 = 0;
+for(int i= 11 ; i<=20; i++){
+	sum = sum2 + i;
 }
 %>
-<%
-java.util.List<String> list = new java.util.ArrayList<>();
-list.add("java");
-list.add("jsp");
-list.add("spring");
-list.add("dbms");
-%>
+11부터 20까지의 합은<%=sum2 %> 입니다.
 
-<ul>
-<%
-for(String item : list){
-%>
-<li>
-<%out.print(item);%>
-</li>
-<%
-}
-%>
-</ul>
-<%
-boolean danger = false;
-%>
-<%
-if(danger){
-%>
-<h1 class="text-danger">DANGER!!</h1>
-<%
-}else{
-%>
-<h1 class="text-info">INFO~~~~~</h1>
-<%
-}
-%>
-<%
-for(int i= 0; i<5; i++){
-	for(int j=0; j<=i; j++){
-		out.print("*");
-	}
-		out.print("<br>");
-}
-%>
+
 </body>
 </html>
