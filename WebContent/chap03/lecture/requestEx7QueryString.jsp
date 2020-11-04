@@ -12,16 +12,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-Enumeration<String> headerNames = request.getHeaderNames();
-
-while(headerNames.hasMoreElements()){
-	String name = headerNames.nextElement();
-	out.print(headerNames.nextElement());
-	out.print("<br>");
-	out.print(request.getHeader(name));
-	out.print("<br>");
-}
-%>
+query string : <%= request.getQueryString() %> <br>
+id: <%= request.getParameter("id")%><br>
+pw: <%= request.getParameter("pw") %><bt>
 </body>
 </html>

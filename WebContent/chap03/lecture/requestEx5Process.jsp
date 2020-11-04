@@ -12,16 +12,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-Enumeration<String> headerNames = request.getHeaderNames();
+<% String s = request.getParameter("gugudan"); 
 
-while(headerNames.hasMoreElements()){
-	String name = headerNames.nextElement();
-	out.print(headerNames.nextElement());
-	out.print("<br>");
-	out.print(request.getHeader(name));
-	out.print("<br>");
-}
+int l = Integer.valueOf(s);
+for(int i =1; i<10; i++){
 %>
+<%=l  + "x" + i +"="+l * i+ "<br>"%>
+
+<%} %>
+
+
 </body>
 </html>

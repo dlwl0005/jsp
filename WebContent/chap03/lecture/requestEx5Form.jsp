@@ -12,16 +12,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-Enumeration<String> headerNames = request.getHeaderNames();
-
-while(headerNames.hasMoreElements()){
-	String name = headerNames.nextElement();
-	out.print(headerNames.nextElement());
-	out.print("<br>");
-	out.print(request.getHeader(name));
-	out.print("<br>");
-}
-%>
+<form action="requestEx5Process.jsp">
+<input type="number" name="gugudan"/><br>
+<input type="submit" value="전송" class="btn btn-success" />
+</form>
 </body>
 </html>

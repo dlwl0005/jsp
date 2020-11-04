@@ -9,19 +9,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>헤더 목록 출력</title>
 </head>
 <body>
 <%
-Enumeration<String> headerNames = request.getHeaderNames();
-
-while(headerNames.hasMoreElements()){
-	String name = headerNames.nextElement();
-	out.print(headerNames.nextElement());
-	out.print("<br>");
-	out.print(request.getHeader(name));
-	out.print("<br>");
-}
+Enumeration heaaderEnum = request.getHeaderNames();
+while(heaaderEnum.hasMoreElements()){
+	String headerName = (String)heaaderEnum.nextElement();
+	String headerValue = request.getHeader(headerName);
 %>
+<%= headerName %> = <%= headerValue %>
+<% }%>
 </body>
 </html>

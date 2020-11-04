@@ -12,16 +12,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-Enumeration<String> headerNames = request.getHeaderNames();
+id: <%= request.getParameter("id") %><br>
+pw: <%= request.getParameter("pw") %><br>
+age: <%= request.getParameter("age") %><br>
 
-while(headerNames.hasMoreElements()){
-	String name = headerNames.nextElement();
-	out.print(headerNames.nextElement());
-	out.print("<br>");
-	out.print(request.getHeader(name));
-	out.print("<br>");
-}
-%>
+<a href="requestEx4Form.jsp" class="btn btn-secondary">뒤로</a>
 </body>
 </html>
