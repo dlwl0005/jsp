@@ -1,6 +1,7 @@
 package chap05;
 
 public class Post {
+	private int num;
 	private String title;
 	private String body;
 	public String getTitle() {
@@ -14,6 +15,12 @@ public class Post {
 	}
 	public void setBody(String body) {
 		this.body = body;
+	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
 	}
 	
 	

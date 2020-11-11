@@ -18,7 +18,6 @@
     Post p = new Post();
     p.setTitle(title);
     p.setBody(body);
-    
     list.add(p);
     }
     %>
@@ -40,6 +39,7 @@
 	
 	<br>
 	<input type="submit" value="등록">
+	
 </form>
 <hr>
 <%
