@@ -15,11 +15,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<jsp:include page="jstlEx24Sub.jsp">
+<jsp:param value="1" name="myBegin"/>
+<jsp:param value="5" name="myEnd"/>
+</jsp:include>
 </body>
 </html>

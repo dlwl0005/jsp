@@ -15,11 +15,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<%
+List<String> list = new ArrayList<>();
+list.add("java");
+list.add("html");
+list.add("servlet");
+list.add("css");
+list.add("jquery");
+list.add("js");
+
+request.setAttribute("myList", list);
+%>
+<c:forEach var="myItem" items="${myList }">
+${myItem }<br>
+</c:forEach>
 </body>
 </html>

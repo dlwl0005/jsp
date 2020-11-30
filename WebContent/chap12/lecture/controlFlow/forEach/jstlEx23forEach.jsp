@@ -15,11 +15,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<%
+Map<String, String> map = new HashMap<>();
+map.put("key1", "value1");
+map.put("key2", "value2");
+map.put("key3", "value3");
+map.put("key4", "value4");
+map.put("key5", "value5");
+
+pageContext.setAttribute("myMap", map);
+%>
+<ul>
+<c:forEach items="${myMap }" var = "myEntry">
+<li>${myEntry.key } : ${myEntry.value }</li>
+</c:forEach>
+</ul>
 </body>
 </html>

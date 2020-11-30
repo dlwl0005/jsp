@@ -15,11 +15,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<h1>choose when otherwise 연습</h1>
+<form action="jstlEx14View.jsp">
+이름: <input type="text" name="name"><br>
+나이: <input type="number" name="age"><br>
+<input type="submit" value="등록">
+</form>
 </body>
 </html>

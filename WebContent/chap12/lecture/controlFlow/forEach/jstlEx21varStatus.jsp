@@ -15,11 +15,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<%
+List<String> list = new ArrayList<>();
+list.add("java");
+list.add("html");
+list.add("servlet");
+list.add("css");
+list.add("jquery");
+list.add("js");
+
+request.setAttribute("myList", list);
+%>
+<ul>
+<c:forEach items="${myList }" var="elem" varStatus="stat" begin="2" end="4">
+<li>${stat.count} :${stat.index}: ${elem }</li><!-- count는 loop가 돌아가는 횟수 -->
+</c:forEach>
+</ul>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
 <%request.setCharacterEncoding("utf-8"); %>  
 <!DOCTYPE html>
 <html>
@@ -15,11 +16,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<my:out>
+<jsp:body><u>현재 시간</u>은 <b>${doteEL }</b> 입니다.</jsp:body>
+</my:out>
+
+<br>
+
+<my:out>
+<%= new Date() %> <u>현재 시간</u>은 <b>${dateEL }</b>입니다.
+</my:out>
 </body>
 </html>

@@ -15,11 +15,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<c:url value = "jstlEx01.jsp" var="myUrl">
+<c:param name="id" value="3"/>
+<c:param name="name" value="john"/>
+</c:url>
+<a href="${myUrl }">예제</a>
 </body>
 </html>

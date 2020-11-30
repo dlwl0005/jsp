@@ -15,11 +15,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<c:choose>
+<c:when test="${param.age > 20 }">
+<jsp:include page="jstlEx14Sub1.jsp"></jsp:include>
+</c:when>
+<c:otherwise>
+<jsp:include page="jstlEx14Sub2.jsp"></jsp:include>
+</c:otherwise>
+</c:choose>
 </body>
 </html>

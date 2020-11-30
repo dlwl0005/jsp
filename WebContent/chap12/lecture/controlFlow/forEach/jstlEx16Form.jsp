@@ -15,11 +15,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<h1>구구단 보기</h1>
+<form action="jstlEx16View.jsp">
+<input type="number" name="dan">
+<input type="submit">
+</form>
 </body>
 </html>

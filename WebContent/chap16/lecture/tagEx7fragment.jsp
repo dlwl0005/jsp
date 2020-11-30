@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/lecture" %>
 <%request.setCharacterEncoding("utf-8"); %>  
 <!DOCTYPE html>
 <html>
@@ -15,11 +16,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<my:ex7fragment>
+<jsp:attribute name="title">
+<h1>my title</h1>
+</jsp:attribute>
+<jsp:body>
+<h1>jsp body</h1>
+</jsp:body>
+</my:ex7fragment>
 </body>
 </html>

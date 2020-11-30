@@ -15,11 +15,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<ul>
+<c:choose>
+<c:when test="${param.name == 'bk' }">
+<li>당신의 이름은 ${param.name }입니다.</li>
+</c:when>
+<c:when test="${param.age >20 }">
+<li>당신은 20세 이상입니다.</li>
+</c:when>
+<c:otherwise>
+<li>당신은 'bk'가 아니고 20세 이상이 아닙니다.</li>
+</c:otherwise>
+</c:choose>
+</ul>
 </body>
 </html>

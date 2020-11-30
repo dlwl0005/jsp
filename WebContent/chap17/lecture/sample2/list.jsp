@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<%@ page import="java.sql.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%request.setCharacterEncoding("utf-8"); %>  
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/lecture" %>
+<% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +15,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<div class="container">
+  <h1>글 목록</h1>
+  <ul>
+    <c:forEach items="${posts }" var="post" varStatus="status">
+      <li><a href="<%=request.getContextPath()%>/sample2/detail?idx=${status.index}">${post.title }</a></li>
+    </c:forEach>
+  </ul>
+</div>
 </body>
 </html>
+
+
+
+
+

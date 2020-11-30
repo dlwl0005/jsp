@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/lecture" %>
 <%request.setCharacterEncoding("utf-8"); %>  
 <!DOCTYPE html>
 <html>
@@ -15,11 +16,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
+<div class="container">
+<c:if test="${not empty message }">
+<div class="alert alert-primary" role="alert">
+${message }
+</div>
+<c:remove var = "message" scope="session"/>
 </c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<h1>회원가입</h1>
+<form action="<%=request.getContextPath() %>/sample1/process" method="post">
+id: <input type="text" name = "id" value="${formId }"><br>
+pw: <input type="text" name ="pw" value="${formPw }"><br>
+<input type="submit" value="가입">
+</form>
+<c:remove var="formId" scope="session"/>
+<c:remove var="formPw" scope="session"/>
+</div>
 </body>
 </html>

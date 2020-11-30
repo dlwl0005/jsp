@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/lecture" %>
 <%request.setCharacterEncoding("utf-8"); %>  
 <!DOCTYPE html>
 <html>
@@ -15,11 +16,29 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<my:ex2bodyEmpty/>
+<hr>
+<my:ex2bodyEmpty></my:ex2bodyEmpty>
+<hr>
+<%-- <my:ex2bodyEmpty/> </my:ex2bodyEmpty> --%>
+
+<hr>
+<my:ex2bodyScriptless/>
+<hr>
+<my:ex2bodyScriptless>
+body content
+</my:ex2bodyScriptless>
+<hr>
+<%-- 스크립트 요소 안됨
+:scriptlet, expression, declaration
+<my:ex2bodyScriptless>
+<%
+out.print("hello");
+%>
+</my:ex2bodyScriptless> --%>
+<hr>
+<my:ex2bodyScriptless>
+${param.age + 100 }
+</my:ex2bodyScriptless>
 </body>
 </html>

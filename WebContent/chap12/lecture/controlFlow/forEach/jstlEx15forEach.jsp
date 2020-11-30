@@ -15,11 +15,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<c:forEach var="i" begin="1" end="3"><!-- 1번부터 3까지 1,2,3반복된다 -->
+<h1>반복 ${i }</h1>
+</c:forEach>
 </body>
 </html>

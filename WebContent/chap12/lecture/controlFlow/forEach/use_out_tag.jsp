@@ -1,3 +1,6 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.Catch"%>
+<%@page import="java.io.IOException"%>
+<%@page import="java.io.FileReader"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
@@ -15,11 +18,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<%
+FileReader reader = null;
+try{
+	String path = "/chap12/use_out_tag.jsp";
+	reader = new FileReader(getServletContext().getRealPath(path));
+%>
+<pre>
+소스 코드 = <%= path %>
+<c:out value="<%= reader %>" escapeXml="true"/>
+</pre>
+<%
+}catch(IOException ex){
+%>
+<%
+}finally{
+	if(reader != null)
+		try{
+			reader.close();
+		}catch(IOException ex){}
+}
+%>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/lecture/" %>
 <%request.setCharacterEncoding("utf-8"); %>  
 <!DOCTYPE html>
 <html>
@@ -16,10 +17,14 @@
 </head>
 <body>
 <c:if test="true">
-<h1>실행</h1>
+<h1>Lorem</h1>
 </c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+
+<my:myFirst/>
+
+<my:myFirst/>
+
+
+<my:mySecond/>
 </body>
 </html>

@@ -15,11 +15,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<h1>구구단</h1>
+<c:forEach begin="2" end="9" var="i">
+<c:forEach begin="1" end="9" var="j" step=2> <!-- step은 n씩늘어난다 -->
+${i } &times; ${j } &equals; ${i*j }<br>
+</c:forEach>
+</c:forEach>
 </body>
 </html>

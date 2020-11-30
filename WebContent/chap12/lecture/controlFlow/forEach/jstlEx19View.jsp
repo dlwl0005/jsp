@@ -15,11 +15,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<ul>
+<c:forEach var="item" items="${paramValues.food }">
+<li>${item }</li>
+</c:forEach>
+</ul>
 </body>
 </html>

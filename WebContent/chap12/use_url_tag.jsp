@@ -15,11 +15,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<c:url value="http://search.daum.net/search" var="searchUrl">
+<c:param name="w" value="blog"/>
+<c:param name="q" value="공원"/>
+</c:url>
+<ul>
+<li>${searchUrl }</li>
+<li><c:url value="/use_if_tag.jsp"/></li>
+<li><c:url value="./use_if_tag.jsp"/></li>
+</ul>
 </body>
 </html>

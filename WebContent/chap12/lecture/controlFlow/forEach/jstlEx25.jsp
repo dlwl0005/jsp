@@ -2,8 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*"%>
+<%@ page import="chap05.Post" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%request.setCharacterEncoding("utf-8"); %>  
+<%request.setCharacterEncoding("utf-8"); %>
+<%
+String title = request.getParameter("title");
+String body = request.getParameter("body");
+
+
+%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +22,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
+<h1>방명록</h1>
+
+<form action="jstlEx25Process.jsp" method="post">
+제목: <input type="text" name ="title"> 
+<br>
+<textarea name="body" rows="3" cols="30"></textarea>
+<br>
+<input type="submit" value="등록">
+</form>
+<hr>
+<c:if test="${empty list }">
+<h3>목록없음</h3>
 </c:if>
-<c:if test="false">
-<h1>no실행</h1>
+<c:if test="${not empty list }">
+<ul>
+<c:forEach items="${list }" var="item" varStatus="stat">
+<li><a href="jstlEx25Detail.jsp?id=${stat.index }">${item.title }</a></li>
+</c:forEach>
+</ul>
 </c:if>
 </body>
 </html>

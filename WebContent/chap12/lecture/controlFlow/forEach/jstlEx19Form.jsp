@@ -15,11 +15,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="true">
-<h1>실행</h1>
-</c:if>
-<c:if test="false">
-<h1>no실행</h1>
-</c:if>
+<h1>foreach 연습</h1>
+<form action="jstlEx19View.jsp">
+<label>바나나<input type="checkbox" name="food" value="banana"></label>
+<label>물<input type="checkbox" name="food" value="water"></label>
+<label>커피<input type="checkbox" name="food" value="coffee"></label>
+<label>사탕<input type="checkbox" name="food" value="candy"></label>
+<label>초콜릿<input type="checkbox" name="food" value="choco"></label>
+
+<br>
+<input type="submit" value="등록">
+</form>
 </body>
 </html>
